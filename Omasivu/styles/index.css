@@ -1,6 +1,7 @@
 body{
-    background-color: #f8dcb9;
+
     font-family: Montserrat;
+    background-image: url("./../Kuvat/Taustakuva.jpeg");
 }
 
 header {
@@ -10,14 +11,9 @@ header {
     padding: 10px;  
     text-align: center;
     box-shadow: 5px 5px 5px #a0a083;
+    opacity: 0.95;
 }
 
-img{
-    background-color: rgb(223, 192, 154);
-    border-radius: 10px;
-    padding: 10px;  
-    box-shadow: 5px 5px 5px #a0a083;
-}
 
 nav {
     grid-area: nav;
@@ -26,19 +22,21 @@ nav {
     padding: 5px;  
     text-align: center;
     box-shadow: 5px 5px 5px #a0a083;
-   
+    opacity: 0.95;
 }
 
 nav a {
-     display: inline-block;
+    display: inline-block;
     width: 8em;
-    background-color: #A0A083;
+    background-color: #e2e2d6;
     padding: 10px;
     margin: 4px;
     border-radius: 10px;
     text-decoration: none;
     color: black;
+    opacity: 0.95;
 }
+
 
 
 main {
@@ -48,15 +46,23 @@ main {
     padding: 10px;  
     text-align: center;
     box-shadow: 5px 5px 5px #a0a083;
+    opacity: 0.95;
 }
 
 
 aside {
     grid-area: aside;
     box-shadow: 5px 5px 5px #a0a083;
+    background-color: rgb(223, 192, 154);
+    border-radius: 10px;
+    padding: 10px;
+    opacity: 0.95;
 }
 
-
+aside img {
+    max-width: 300px;
+    border-radius: 10px;
+}
 
 
 
@@ -67,12 +73,10 @@ footer {
     padding: 10px;  
     text-align: center;
     box-shadow: 5px 5px 5px #a0a083;
+    opacity: 0.95;
 }
 
-aside img {
-    max-width: 300px;
 
-}
 
 .grid-container1 {
     display: grid;
@@ -85,7 +89,7 @@ aside img {
     grid-gap: .5em;
     padding: .5em;
     
-    max-width: 62em; /* GIVE CONTAINER A WIDTH AND MARGINS IF YOU DO NOT WANT FULL SCREEN */
+    max-width: 62em; 
     margin: auto;
 }
 
@@ -101,7 +105,7 @@ aside img {
     grid-gap: .5em;
     padding: .5em;
     
-    max-width: 62em; /* GIVE CONTAINER A WIDTH AND MARGINS IF YOU DO NOT WANT FULL SCREEN */
+    max-width: 62em; 
     margin: auto;
 }
 
@@ -117,7 +121,7 @@ aside img {
     grid-gap: .5em;
     padding: .5em;
     
-    max-width: 62em; /* GIVE CONTAINER A WIDTH AND MARGINS IF YOU DO NOT WANT FULL SCREEN */
+    max-width: 62em; 
     margin: auto;
 }
 
@@ -127,44 +131,97 @@ ul li {
 }
 
 
-/*FIRST BREAK POINT === tablet */
+/*tablet */
 @media only screen and (max-width : 900px) {
     body {
         background: rgb(223, 192, 154)
     }
 
-    .grid-container {
+    .grid-container1 {
         display: grid;
         grid-template-areas:
             'nav nav nav nav nav nav'
             'header header header header header header'
-            'main main main main aside aside'
+            'main main main main main main'
             'footer footer footer footer footer footer';
         grid-gap: .5em;
     }
-
+    .grid-container2 {
+        display: grid;
+        grid-template-areas:
+            'nav nav nav nav nav nav'
+            'header header header header header header'
+            'main main main main main main'
+            'footer footer footer footer footer footer';
+        grid-gap: .5em;
+    }
+    .grid-container3 {
+        display: grid;
+        grid-template-areas:
+            'nav nav nav nav nav nav'
+            'header header header header header header'
+            'main main main main main main'
+            'footer footer footer footer footer footer';
+        grid-gap: .5em;
+    }
+    aside img {
+        display: none;
+    }
     ul li {
         display: inline-block;
     }
-
+    aside{
+        display: none;
+    }
 }
 
-/*SECOND BREAK POINT === mobile */
+/*mobile */
 @media only screen and (max-width : 600px) {
 
     body {
         background: rgb(223, 192, 154)
     }
 
-    .grid-container {
+    .grid-container1 {
         display: grid;
         grid-template-areas:
             'header header header header header header'
              'nav nav nav nav nav nav'
             'main main main main main main'
-            'aside aside aside aside aside aside'
             'footer footer footer footer footer footer';
         grid-gap: .5em;
+    }
+
+    .grid-container2 {
+        display: grid;
+        grid-template-areas:
+            'header header header header header header'
+             'nav nav nav nav nav nav'
+            'main main main main main main'
+            'footer footer footer footer footer footer';
+        grid-gap: .5em;
+    }
+
+    .grid-container3 {
+        display: grid;
+        grid-template-areas:
+            'header header header header header header'
+             'nav nav nav nav nav nav'
+            'main main main main main main'
+            'footer footer footer footer footer footer';
+        grid-gap: .5em;
+    }
+    
+    .linkit {
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+    }
+    aside img {
+        display: none;
+    }
+    aside{
+        display: none;
     }
 
     ul li {
