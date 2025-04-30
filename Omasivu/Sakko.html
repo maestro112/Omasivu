@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ylinopeus</title>
+</head>
+<body>
+    <h3>Ylinopeus</h3>
+    <p>Kuskin kaasujalka oli taasen liian painava 60 kilometrin nopeusrajoitusalueella, jolloin annetaan liikennevirhemaksu tai sakko ylinopeuden suuruuden perusteella. <br>Ohjelma, kertoo liikennevirhemaksun määrän, joka määräytyy seuraavasti: <br>
+   <br>
+        Ylinopeus	Maksu <br>
+        alle 11 km/h	100 € <br>
+        11-15 km/h	170 € <br>
+        16-20 km/h	200 € <br>
+        yli 20 km/h	päiväsakko <br>
+        </p>
+    <form>
+        <p>
+            <label>Nopeus:</label>
+            <input type="text" id="nopeus" size="3">
+        </p>
+        <p>
+            <input type="button" id="painike" value="Kerro" onclick="kerro()">
+        </p>
+    </form>
+    <p id="vastaus"></p>
+    <script>
+        function kerro() {
+            var nopeus = parseFloat(document.getElementById('nopeus').value);
+            var ylinopeus = nopeus - 60;
+            var vastaus = '';
+
+            if (ylinopeus <= 0) {
+                vastaus = 'Ei ylinopeutta';
+            } else if (ylinopeus < 11) {
+                vastaus = 'Liikennevirhemaksu on 100.00';
+            } else if (ylinopeus < 16) {
+                vastaus = 'Liikennevirhemaksu on 170.00';
+            } else if (ylinopeus < 21) {
+                vastaus = 'Liikennevirhemaksu on 200.00';
+            } else {
+                vastaus = 'Menee päiväsakolle';
+            }
+
+            document.getElementById('vastaus').innerText = vastaus;
+        }
+    </script>
+</body>
+</html>
